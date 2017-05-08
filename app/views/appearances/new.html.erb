@@ -1,0 +1,7 @@
+<%= form_for @appearance do |f| %>
+<%= f.select :guest_id, options_for_select(Guest.all.map {|guest| [guest.name, guest.id]})%>
+<%= f.select :episode_id, options_for_select(Episode.all.map {|episode| [episode.date, episode.id]})%>
+<%= f.label :rating%>:
+<%= f.select :rating, options_for_select((1..5).to_a)%>
+<%= f.submit%>
+<% end %>
